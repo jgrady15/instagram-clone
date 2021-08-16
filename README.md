@@ -29,6 +29,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `npm install @material-ui/icons`
 ### `npm install --save firebase`
+### `npm install react-router-dom`
 
 **These are dependencies** 
 
