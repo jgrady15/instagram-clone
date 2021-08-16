@@ -28,11 +28,11 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `npm install @material-ui/icons`
+### `npm install --save firebase`
 
-**This is a dependency** 
+**These are dependencies** 
 
-This project uses Material UI for Icons. At the moment, some of the files in this project will not be fully functional
-unless you install Material UI.
+This project uses Material UI for Icons and Google Firebase for the backend. This project will not work unless you install both of these dependencies.
 
 ## App Features
 
