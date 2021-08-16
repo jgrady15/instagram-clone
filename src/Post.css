@@ -1,0 +1,104 @@
+.post {
+    max-width: 635px;
+    background-color: white;
+    border: 1px solid lightgray;
+    margin-bottom: 45px;
+}
+
+.post__image {
+    width: 100%;
+    max-width: 614px;
+    max-height: 614px;
+    min-width: 614px;
+    min-height: 614px;
+    object-fit: contain;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+.post__text {
+    font-weight: normal;
+    padding: 20px;
+}
+
+.post__toolbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.post__toolbar-three {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    align-items: stretch;
+    margin-left: 5px;
+}
+
+.post__toolbar button {
+    border: none;
+    background: none;
+}
+
+.post__toolbar button:hover {
+    transform: scale(1.1);
+    transition-duration: 0.5s;
+}
+
+.post__toolbar-three #favorites{
+    padding: 3px;
+}
+
+.post__toolbar-three #viewComments {
+    padding: 3px;
+}
+
+.post__toolbar-three #share {
+    padding: 3px;
+}
+
+.collections-separate {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.post__header {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+}
+
+.post__avatar {
+    margin-right: 10px;
+}
+
+.post__commentBox {
+    display: flex;
+    margin-top: 10px;
+}
+
+.post__comments {
+    padding-left: 20px;
+}
+
+.post__comments p {
+    margin: 6px 0px;
+}
+
+
+.post__input {
+    flex: 1;
+    border: none;
+    padding: 20px;
+    border-top: 1px solid lightgray;
+}
+
+.post__button {
+    flex: 0;
+    border: none;
+    color: #6082a3;
+    border-top: 1px solid lightgray;
+    background-color: white;
+    margin-right: 6px;
+}
