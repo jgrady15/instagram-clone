@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Avatar from '@material-ui/core/Avatar';
+import { Button, Input } from '@material-ui/core';
 import firebase from 'firebase';
 import { database } from './firebase';
 import ReactDOMServer from 'react-dom/server';
@@ -37,31 +38,33 @@ function Post({ postId, user, username, caption, imageUrl }) {
     return (
         <div className='post'>
             <div className='post__header'>
-                <Avatar 
-                    className='post__avatar' 
-                    alt={username} 
-                    src='/static/images/avatar/1.jpg'
-                />
+                <Button>
+                    <Avatar 
+                        className='post__avatar' 
+                        alt={username} 
+                        src='/static/images/avatar/1.jpg'
+                    />
+                </Button>
                 <h3>{username}</h3>
             </div>
             
             <img className='post__image' src={imageUrl} alt='' />
             <div className='post__toolbar'>
                 <div className='post__toolbar-three'>
-                    <button>
+                    <Button>
                         <svg id='favorites' xmlns="http://www.w3.org/2000/svg" height="29" viewBox="0 -3 24 24" width="29"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/></svg>
-                    </button>
-                    <button>
+                    </Button>
+                    <Button>
                         <svg id='viewComments-link' xmlns="http://www.w3.org/2000/svg" height="27" viewBox="0 -3 24 24" width="27"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
-                    </button>
-                    <button>
+                    </Button>
+                    <Button>
                         <svg id='share' xmlns="http://www.w3.org/2000/svg" height="27" viewBox="0 1 24 24" width="27"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M16 5l-1.42 1.42-1.59-1.59V16h-1.98V4.83L9.42 6.42 8 5l4-4 4 4zm4 5v11c0 1.1-.9 2-2 2H6c-1.11 0-2-.9-2-2V10c0-1.11.89-2 2-2h3v2H6v11h12V10h-3V8h3c1.1 0 2 .89 2 2z"/></svg>
-                    </button>
+                    </Button>
                 </div>
                 <div className='collections-separate'>
-                        <button>
+                        <Button id='collections-button'>
                             <svg id='collections' xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 -2 24 24" width="28"><path d="M0 0h24v24H0z" fill="none"/><path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z"/></svg>
-                        </button>
+                        </Button>
                 </div>
             </div>
             <h4 className='post__text'><strong>{username}</strong>: {caption}</h4>

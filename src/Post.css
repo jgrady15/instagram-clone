@@ -34,14 +34,23 @@
     align-content: center;
     align-items: stretch;
     margin-left: 5px;
+    
 }
 
-.post__toolbar button {
+.post__toolbar Button {
     border: none;
     background: none;
+    padding: 0px;
+    margin-right: 5px;
+    min-width: auto;
+    position: static;
 }
 
-.post__toolbar button:hover {
+.post__toolbar .collections-separate .collections-button {
+    margin-right: 5px;
+}
+
+.post__toolbar Button:hover {
     transform: scale(1.1);
     transition-duration: 0.5s;
 }
@@ -71,6 +80,13 @@
 
 .post__avatar {
     margin-right: 10px;
+    position: static;
+}
+
+.post__header Button{
+    margin-right: 0px;
+    min-width: auto;
+    padding: 0px;
 }
 
 .post__commentBox {
