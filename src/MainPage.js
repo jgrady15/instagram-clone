@@ -4,6 +4,7 @@ import './MainPage.css';
 import { database, auth } from './firebase';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Input } from '@material-ui/core';
+import Avatar from '@material-ui/core/Avatar'
 import Modal from '@material-ui/core/Modal';
 import ImageUpload from './ImageUpload.js';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -165,6 +166,14 @@ export default function MainPage() {
             }
             </div>
             <div className='app__postsRight'>
+              {
+                user ? (
+                  <Avatar className='post__avatar' alt={username} src='/static/images/avatar/1.jpg'>
+                  </Avatar>
+                ) : (
+                  <p>Please sign in to view your user profile.</p>
+                )
+              }
             </div>
         </div>
 
