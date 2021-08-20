@@ -17,12 +17,19 @@ function Post({ postId, user, username, caption, imageUrl }) {
     const [sharePostStatus, setSharePostStatus] = useState(false);
     const [collectionStatus, setCollectionStatus] = useState(false);
 
-    function incrementFavorites() {
+    const incrementFavorites = (event) => {
+        event.preventDefault();
         database.collection('posts').doc(postId).update({
-            likes: firebase.firestore.FieldValue.increment(1)   
+            likes: firebase.firestore.FieldValue.increment(1),
         });
 
-        return true;
+        /* // This is for a save state, so that we can remember to save the liked post
+        database.collection('users').doc(userId).update({
+            likedPosts: JSON.stringify(database.collection('post').doc(postId))
+        }) 
+        */
+
+        setLiked(true);
     }
 
     function decrementFavorites() {
@@ -31,6 +38,11 @@ function Post({ postId, user, username, caption, imageUrl }) {
         });
 
         return false;
+    }
+
+    const likePost = (event) => {
+        event.preventDefault();
+        database.collection('users')
     }
     
     const postComment = (event) => {
@@ -59,20 +71,20 @@ function Post({ postId, user, username, caption, imageUrl }) {
     return (
         <div className='post'>
             <div className='post__header'>
-                <Button>
+                <a href='/'>
                     <Avatar 
                         className='post__avatar' 
                         alt={username} 
                         src='/static/images/avatar/1.jpg'
                     />
-                </Button>
+                </a>
                 <h3>{username}</h3>
             </div>
             
             <img className='post__image' src={imageUrl} alt='' />
             <div className='post__toolbar'>
                 <div className='post__toolbar-three'>
-                    <Button onClick={() => setLiked(!liked)}>
+                    <Button onClick={(e) => incrementFavorites}>
                         {
                             liked ? (
                                 // on

@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react';
 import Post from './Post.js';
 import './MainPage.css';
 import { database, auth } from './firebase';
+import firebase from 'firebase';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Input } from '@material-ui/core';
 import Avatar from '@material-ui/core/Avatar'
 import Modal from '@material-ui/core/Modal';
 import ImageUpload from './ImageUpload.js';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { map } from 'bluebird';
+import { react } from '@babel/types';
 
 function getModalStyle() {
     const top = 50;
@@ -84,7 +87,6 @@ export default function MainPage() {
           displayName: username
         })
       }).catch((error) => alert(error.message));
-  
       setOpen(false);
     }
   
